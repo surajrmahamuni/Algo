@@ -26,3 +26,32 @@ public class Main {
         return -1;
     }
 }
+
+
+
+//Find a character in String using linear search
+public class Main {
+
+    public static void main(String[] args){
+        String name = "suraj";
+        char target = 'u';
+        System.out.println(linearSearch(name, target));
+    }
+
+    //Search a character in string: return the index if character is found
+    // else return -1
+    public static int linearSearch(String name, char target){
+        if(name.length() == 0){
+            return -1;
+        }
+
+        // for loop
+        for(int i = 0; i < name.length(); i++){
+            //check for character at every index
+            if(target == name.charAt(i)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+}
