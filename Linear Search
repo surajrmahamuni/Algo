@@ -1,57 +1,171 @@
 //Find a target element in integer array
-public class Main {
+        public class Main {
 
-    public static void main(String[] args){
-        int[] nums = {23, 60, 200, -3, 15, 27, 49};
-        int target = 27;
-        System.out.println(linearSearch(nums, target));
+            public static void main(String[] args){
+                int[] nums = {23, 60, 200, -3, 15, 27, 49};
+                int target = 27;
+                System.out.println(linearSearch(nums, target);
+                System.out.println(linearSearch(nums, target, 1, 5);
 
-    }
+            }
 
-    //Search in the array: return the index if element is found
-    // else return -1
-    public static int linearSearch(int[] arr, int target){
-        if(arr.length == 0){
-            return -1;
-        }
+            //Search in the array: return the index if element is found
+            // else return -1
+            public static int linearSearch(int[] arr, int target){
+                if(arr.length == 0){
+                    return -1;
+                }
 
-        // for loop to traverse an array
-        for(int i = 0; i < arr.length; i++){
-            //check for element at every index
-            int element = arr[i];
-            if(element == target){
-                return i;
+                // for loop to traverse an array
+                for(int i = 0; i < arr.length; i++){
+                    //check for element at every index
+                    int element = arr[i];
+                    if(element == target){
+                        return i;
+                    }
+                }
+                return -1;
+            }    
+
+
+             //Search in the array in between given indices: return the index if element is found
+             // else return -1
+             public static int linearSearch2(int[] arr, int target, int start, int end ){
+                if(arr.length == 0){
+                    return -1;
+                }
+
+                // for loop to traverse an array
+                for(int i = start; i <= end; i++){
+                    //check for element at every index
+                    int element = arr[i];
+                    if(element == target){
+                        return i;
+                    }
+                }
+                return -1;
             }
         }
-        return -1;
-    }
-}
+
+
+
+
+
 
 
 
 //Find a character in String using linear search
-public class Main {
+        public class Main {
 
-    public static void main(String[] args){
-        String name = "suraj";
-        char target = 'u';
-        System.out.println(linearSearch(name, target));
-    }
+            public static void main(String[] args){
+                String name = "suraj";
+                char target = 'u';
+                System.out.println(linearSearch(name, target));
+                System.out.println(linearSearch2(name, target));
+            }
 
-    //Search a character in string: return the index if character is found
-    // else return -1
-    public static int linearSearch(String name, char target){
-        if(name.length() == 0){
-            return -1;
+            //Search a character in string: return the index if character is found
+            // else return -1
+            public static int linearSearch(String name, char target){
+                if(name.length() == 0){
+                    return -1;
+                }
+
+                // for loop
+                for(int i = 0; i < name.length(); i++){
+                    //check for character at every index
+                    if(target == name.charAt(i)) {
+                        return i;
+                    }
+                }
+                return -1;
+            }
+
+            //Using for each loop
+            public static boolean linearSeacrh2(String name, char target){   
+                if(name.length() == 0){
+                    return false;
+                }
+
+                // for each loop
+                for(char c : name : name.toCharArray()){
+                    //check for character 
+                    if(target == char) {
+                        return true;
+                    }
+                }
+                return false;
+
         }
 
-        // for loop
-        for(int i = 0; i < name.length(); i++){
-            //check for character at every index
-            if(target == name.charAt(i)) {
-                return i;
+
+
+
+
+
+
+
+//Finding minimum and maximum number in a given array
+        import java.util.Arrays;
+
+        public class Main {
+
+            public static void main(String[] args){
+                int[] num = {1,2,3,4,5,6,7,8,9};
+                System.out.println(Arrays.toString(linearSearch(num)));
+            }
+
+            //Search a minumum and maximum number in a given array
+
+            public static int[] linearSearch(int[] num) {
+                // Consider the given array is non empty
+                int min = num[0];
+                int max = num[0];
+
+                for (int i = 0; i < num.length; i++) {
+                    if(num[i] < min) {
+                        min = num[i];
+                    }
+
+                    if(num[i] > max) {
+                        max = num[i];
+                    }
+                }
+                return new int[]{min, max};
+
             }
         }
-        return -1;
-    }
-}
+
+
+
+
+
+
+//Finding a target element in 2D array
+        import java.util.Arrays;
+
+        public class Main {
+
+            public static void main(String[] args){
+                int[][] num = {{1,2,3}, {4,5,6}, {7,8,9}};
+                int target = 7;
+                System.out.println(Arrays.toString(linearSearch(num, target)));
+            }
+
+            //Search a minumum and maximum number in a given array
+
+            public static int[] linearSearch(int[][] num, int target) {
+                // Consider the given array is non empty
+
+                for (int row = 0; row < num.length; row++) {
+                    for(int col =0; col < num[row].length; col++)
+                    if(num[row][col] == target) {
+                        return new int[]{row, col};
+                    }
+
+                }
+                return new int[]{-1, -1};
+
+            }
+        }
+
